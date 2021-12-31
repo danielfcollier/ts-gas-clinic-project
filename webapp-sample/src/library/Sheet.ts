@@ -1,8 +1,6 @@
-import { sheetID } from '../../config/index';
-
 export default class Sheet {
   static getData(params) {
-    const sheet = SpreadsheetApp.openById(sheetID).getSheetByName(params.name);
+    const sheet = SpreadsheetApp.openById(params.id).getSheetByName(params.name);
 
     const startRow = 2;
     const startColumn = 1;
