@@ -1,3 +1,5 @@
+import googleService from './googleService';
+
 export default function loadTab({ buildFunction, id, callback, params }) {
   const defaultId = 'app';
 
@@ -5,7 +7,7 @@ export default function loadTab({ buildFunction, id, callback, params }) {
     document.getElementById(id ?? defaultId).innerHTML = htmlString;
   };
 
-  google.script.run.withSuccessHandler(successHandlerCallback)[buildFunction]();
+  googleService(successHandlerCallback, buildFunction);
 
   if (callback) {
     callback(params);
