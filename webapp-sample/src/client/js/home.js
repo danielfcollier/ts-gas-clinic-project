@@ -1,3 +1,4 @@
+import inputEventHandler from './events';
 import { loadAddCustomerTab, loadEditCustomerTab, loadSearchTab } from './tabs';
 
 function mainHome() {
@@ -7,3 +8,4 @@ function mainHome() {
 }
 
 mainHome();
+document.getElementById('app').addEventListener('input', inputEventHandler);
