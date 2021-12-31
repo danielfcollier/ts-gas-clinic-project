@@ -1,6 +1,6 @@
 ```bash
 npm install
-clasp create --type standalone --title 'Web App Example' --rootDir .gas mv .gas/.clasp.json .
+clasp create --type sheets --title 'Web App Bootstrap Example' --rootDir .gas && mv .gas/.clasp.json .
 ```
 
 other type options:
