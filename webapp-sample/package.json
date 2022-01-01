@@ -9,7 +9,7 @@
     "build:components": "ls src/components | awk '{ system(\"cp src/components/\" $0 \" .gas/\") }'",
     "build:server": "mkdir .gas/src | ls src/ | egrep -wv 'client|components' | awk '{ system(\"cp -r src/\" $0 \" .gas/src/\" $0 \"\") }' && cp -r config .gas",
     "build:post": "ls .gas/ | grep -wv json | awk '$0=\".gas/\"$0' | xargs rm -rf",
-    "build:after": "rm -rf .parcel-cache && cp dist/*.html .gas && rm -rf dist",
+    "build:after": "rm -rf .parcel-cache && cp dist/*.html .gas && rm -rf dist/",
     "dev:start": "parcel serve --no-cache --no-source-maps --dist-dir .gas src/client/*.html",
     "dev:clear": "npm run build:post",
     "dev:watch": "nodemon --watch config/ --watch src/ --exec \"npm run dev:onchange\" --ext .js,.ts,.jsx,.tsx,.css,.scss,.html",
