@@ -72,7 +72,6 @@ https://github.com/google/clasp
 
 https://github.com/tanaikech/taking-advantage-of-Web-Apps-with-google-apps-script
 
-
 Based on the tutorials:
 
 https://www.youtube.com/watch?v=6zFowiTNhqI&list=PLv9Pf9aNgemvM36efLpaHxbkZTGp2pfhx
