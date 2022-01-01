@@ -1,4 +1,4 @@
-import backendCall from './backend';
+import backendCall from './server';
 
 export default function loadTab({ buildFunction, id, callback, params }) {
   const defaultId = 'app';

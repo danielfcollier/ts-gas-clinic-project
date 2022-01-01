@@ -1,4 +1,4 @@
-import events from './events';
+import events from './config/events';
 
 function mainHome() {
   events.forEach((event) => {

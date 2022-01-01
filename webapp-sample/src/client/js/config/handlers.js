@@ -1,10 +1,12 @@
-// import { deleteCustomer, deleteDisplayConfirmation } from './customer/editCustomer';
-import loadSearchResults from './customer/searchCustomer';
+import { deleteCustomer, deleteDisplayConfirmation } from '../customer/deleteActions';
+import loadSearchResults from '../customer/buildSearchResults';
+import { loadEditCustomerTab } from './tabs';
 
 const handlers = {
   click: [
-    // { selector: '.beforeDeleteButton', callback: deleteDisplayConfirmation },
-    // { selector: '.deleteButton', callback: deleteCustomer },
+    { selector: '.beforeDeleteButton', callback: deleteDisplayConfirmation },
+    { selector: '.deleteButton', callback: deleteCustomer },
+    { selector: '.editButton', callback: loadEditCustomerTab },
   ],
   input: [{ selector: '#search-input', callback: loadSearchResults }],
 };

@@ -1,11 +1,8 @@
-import backendCall from '../functions/backend';
+import backendCall from '../config/server';
+import { storeSessionData } from '../utils/sessionData';
 
 export default function getSearchData() {
-  const storeData = (data) => {
-    // eslint-disable-next-line
-    console.log({ msg: 'Problem here', data });
-    window.sessionStorage.setItem('searchData', JSON.stringify(data));
-  };
+  const storeSessionDataCallback = (data) => storeSessionData('searchData', data);
 
-  backendCall(storeData, 'ServerAPI.getSearchData');
+  backendCall(storeSessionDataCallback, 'serverGetSearchData');
 }
