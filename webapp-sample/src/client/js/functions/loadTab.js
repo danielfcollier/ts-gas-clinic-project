@@ -1,4 +1,4 @@
-import googleService from './googleService';
+import backendCall from './backend';
 
 export default function loadTab({ buildFunction, id, callback, params }) {
   const defaultId = 'app';
@@ -7,7 +7,7 @@ export default function loadTab({ buildFunction, id, callback, params }) {
     document.getElementById(id ?? defaultId).innerHTML = htmlString;
   };
 
-  googleService(successHandlerCallback, buildFunction);
+  backendCall(successHandlerCallback, buildFunction);
 
   if (callback) {
     callback(params);

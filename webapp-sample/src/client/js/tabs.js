@@ -1,14 +1,16 @@
-import getSearchData from './functions/getSearchData';
 import loadTab from './functions/loadTab';
+import getSearchData from './customer/getSearchData';
 
-export function loadSearchTab() {
-  loadTab({ buildFunction: 'buildSearchTab', callback: getSearchData });
+function loadSearchTab() {
+  loadTab({ buildFunction: 'ServerAPI.buildSearchTab', callback: getSearchData });
 }
 
-export function loadAddCustomerTab() {
-  loadTab({ buildFunction: 'buildAddCustomerTab' });
+function loadAddCustomerTab() {
+  loadTab({ buildFunction: 'ServerAPI.buildAddCustomerTab' });
 }
 
-export function loadEditCustomerTab() {
-  loadTab({ buildFunction: 'buildAddCustomerTab' });
+function loadEditCustomerTab() {
+  loadTab({ buildFunction: 'ServerAPI.buildAddCustomerTab' });
 }
+
+export { loadSearchTab, loadAddCustomerTab, loadEditCustomerTab };

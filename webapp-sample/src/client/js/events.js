@@ -1,14 +1,32 @@
-import loadSearchResults from './search';
+import { loadAddCustomerTab, loadEditCustomerTab, loadSearchTab } from './tabs';
+import { clickEventHandler, inputEventHandler } from './handlers';
 
 const events = [
-  { selector: '#search-input', callback: loadSearchResults },
+  {
+    id: 'id-search',
+    type: 'click',
+    callback: loadSearchTab,
+  },
+  {
+    id: 'id-addcustomer',
+    type: 'click',
+    callback: loadAddCustomerTab,
+  },
+  {
+    id: 'id-editcustomer',
+    type: 'click',
+    callback: loadEditCustomerTab,
+  },
+  {
+    id: 'app',
+    type: 'click',
+    callback: clickEventHandler,
+  },
+  {
+    id: 'app',
+    type: 'input',
+    callback: inputEventHandler,
+  },
 ];
 
-export default function inputEventHandler(e) {
-  for (const event of events) {
-    if (e.target.matches(event.selector)) {
-      event.callback();
-      break;
-    }
-  };
-}
+export default events;
