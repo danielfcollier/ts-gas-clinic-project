@@ -1,8 +1,8 @@
-import backendCall from '../config/server';
+import callServer from '../utils/callServer';
 import { storeSessionData } from '../utils/sessionData';
 
 export default function getSearchData() {
   const storeSessionDataCallback = (data) => storeSessionData('searchData', data);
 
-  backendCall(storeSessionDataCallback, 'serverGetSearchData');
+  callServer(storeSessionDataCallback, 'serverGetSearchData');
 }

@@ -1,5 +1,5 @@
-import { loadAddCustomerTab, loadEditCustomerTab, loadSearchTab } from './tabs';
-import { clickEventHandler, inputEventHandler } from './handlers';
+import { clickEventHandler, inputEventHandler, navClickEventHandler } from './handlers';
+import { loadAddCustomerTab, loadSearchTab } from './tabs';
 
 const events = [
   {
@@ -13,11 +13,6 @@ const events = [
     callback: loadAddCustomerTab,
   },
   {
-    id: 'id-editcustomer',
-    type: 'click',
-    callback: loadEditCustomerTab,
-  },
-  {
     id: 'app',
     type: 'click',
     callback: clickEventHandler,
@@ -26,6 +21,11 @@ const events = [
     id: 'app',
     type: 'input',
     callback: inputEventHandler,
+  },
+  {
+    id: 'navigation',
+    type: 'click',
+    callback: navClickEventHandler,
   },
 ];
 
