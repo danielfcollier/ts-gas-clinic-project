@@ -20,7 +20,7 @@ src
 ├── client
 │ ├── css
 │ ├── js
-│ └── home.html
+│ └── app.html
 ├── html
 ├── library
 └── server
