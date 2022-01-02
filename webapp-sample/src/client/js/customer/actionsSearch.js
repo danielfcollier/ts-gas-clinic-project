@@ -3,6 +3,8 @@ import template from './search/template';
 
 import { retrieveSessionData } from '../utils/sessionData';
 
+const searchField = 'fullName';
+
 export function searchCustomer() {
   const search = {
     data: retrieveSessionData('searchData'),
@@ -22,9 +24,9 @@ export function searchCustomer() {
   }
 
   const searchResults = search.data.filter((record) => {
-    const searchField = 'fullName';
     const index = template.indexOf(searchField);
     const content = record[index].toString().toLowerCase();
+
     return content.includes(search.input.toLowerCase());
   });
 

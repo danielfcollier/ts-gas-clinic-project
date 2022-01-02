@@ -6,6 +6,7 @@ export default function callServer(successHandlerCallback, serverFunction, param
     .withSuccessHandler((args) => {
       const result = successHandlerCallback(args);
       loadingEnd();
+
       return result;
     })
     [serverFunction](params);

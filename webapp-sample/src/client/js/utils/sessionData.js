@@ -12,6 +12,7 @@ function getSessionDataById(variable, id) {
   data.forEach((element) => {
     bulk.set(`${element[0]}`, element);
   });
+
   return bulk.get(id);
 }
 
