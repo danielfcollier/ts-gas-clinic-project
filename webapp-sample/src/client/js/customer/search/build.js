@@ -13,6 +13,7 @@ function buildRow(record, search) {
   rowTemplate.textContent.forEach((key, index) => {
     row.querySelector(`.${key}`).textContent = record[index];
   });
+
   return row;
 }
 

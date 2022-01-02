@@ -32,4 +32,4 @@ function editCustomer() {
   callServer(successHandlerCallback, serverFunction, params);
 }
 
-export { editCustomer };
+export { editCustomer, editSetting };

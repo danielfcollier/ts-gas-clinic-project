@@ -30,8 +30,28 @@ function oldEditCustomer(customerInfo) {
   return true;
 }
 
+// TODO: substitute this function.
+function oldAddCustomer(customerInfo) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ws = ss.getSheetByName('Database');
+  const idArray = ws.getRange(2, 1, ws.getLastRow() - 1, 1).getValues();
+  let maxNum = 0;
+  idArray.forEach(r => {
+    maxNum = r[0] > maxNum ? r[0] : maxNum;
+  });
+
+  const newId = maxNum + 1;
+
+  ws.appendRow([
+    newId,
+    customerInfo.fullName,
+    customerInfo.email,
+    customerInfo.gender
+  ]);
+}
+
 function serverBuildSearchTab() {
-  return HtmlPages.buildPartial('search');
+  return HtmlPages.buildPartial('searchCustomer');
 }
 
 function serverBuildAddCustomerTab() {
@@ -44,6 +64,10 @@ function serverBuildEditCustomerTab() {
 
 function serverGetSearchData() {
   return Sheet.getData({ id: sheetID, name: 'Database' });
+}
+
+function serverAddCustomer(customerInfo) {
+  return oldAddCustomer(customerInfo);
 }
 
 function serverDeleteCustomerById(id) {
@@ -59,6 +83,7 @@ export {
   serverBuildAddCustomerTab,
   serverBuildEditCustomerTab,
   serverGetSearchData,
+  serverAddCustomer,
   serverDeleteCustomerById,
   serverEditCustomer,
 };

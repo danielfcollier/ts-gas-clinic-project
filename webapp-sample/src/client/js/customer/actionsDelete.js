@@ -1,5 +1,5 @@
 import callServer from '../utils/callServer';
-import { removeSessionDataById, retrieveSessionData } from '../utils/sessionData';
+import { removeSessionDataById } from '../utils/sessionData';
 
 function deleteDisplayConfirmation(e) {
   if (e.target.dataset.buttonState === 'delete') {

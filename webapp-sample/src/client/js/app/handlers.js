@@ -3,9 +3,11 @@ import { loadEditCustomerTab, loadSearchTab } from './tabs';
 import changeTab from './utils/changeTab';
 
 import customerHandlers from '../customer/handlers';
+import { addCustomer } from '../customer/actionsAdd';
 
 const appHandlers = {
   click: [
+    { selector: '#addButton', callback: addCustomer },
     { selector: '.editButton', callback: loadEditCustomerTab },
     { selector: '#cancel-changes', callback: loadSearchTab },
   ],
