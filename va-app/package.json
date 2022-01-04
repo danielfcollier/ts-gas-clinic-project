@@ -1,0 +1,39 @@
+{
+  "name": "webapp-sample",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo 'Test: no test specified'",
+    "build": "npm run build:client && npm run build:components && npm run build:server && npm run build:after && clasp push && npm run build:post",
+    "build:client": "parcel build --no-minify --no-cache --no-source-maps src/client/*.html",
+    "build:components": "ls src/components | awk '{ system(\"cp src/components/\" $0 \" .gas/\") }'",
+    "build:server": "mkdir .gas/src | ls src/ | egrep -wv 'client|components' | awk '{ system(\"cp -r src/\" $0 \" .gas/src/\" $0 \"\") }' && cp -r config .gas",
+    "build:post": "ls .gas/ | grep -wv json | awk '$0=\".gas/\"$0' | xargs rm -rf",
+    "build:after": "rm -rf .parcel-cache && cp dist/*.html .gas && rm -rf dist/",
+    "dev:start": "parcel serve --no-cache --no-source-maps --dist-dir .gas src/client/*.html",
+    "dev:clear": "npm run build:post",
+    "dev:watch": "nodemon --watch config/ --watch src/ --exec \"npm run dev:onchange\" --ext .js,.ts,.jsx,.tsx,.css,.scss,.html",
+    "dev:onchange": "npm run pretty:start",
+    "pretty:lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx . --fix",
+    "pretty:start": "npx prettier --write .",
+    "pretty:quick": "pretty-quick --ignore-path .prettierignore --config .prettierrc.json --pattern '**/*.{ts,js,.css,.scss,.html}'",
+    "pretty:staged": "npm run pretty:quick -- --staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.5.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "nodemon": "^2.0.15",
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-inliner": "^1.0.16",
+    "posthtml": "^0.16.5",
+    "posthtml-inline-assets": "^3.1.0",
+    "prettier": "^2.5.1",
+    "pretty-quick": "^3.1.3"
+  }
+}
