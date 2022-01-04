@@ -50,17 +50,37 @@ function oldAddCustomer(customerInfo) {
   ]);
 }
 
-function serverBuildSearchTab() {
-  return HtmlPages.buildPartial('searchCustomer');
+// Build HTML Components
+
+function serverBuildTabBooking() {
+  return HtmlPages.buildPartial('booking');
 }
 
-function serverBuildAddCustomerTab() {
-  return HtmlPages.buildPartial('addCustomer');
+function serverBuildTabCreateBooking() {
+  return HtmlPages.buildPartial('createBooking');
 }
 
-function serverBuildEditCustomerTab() {
-  return HtmlPages.buildPartial('editCustomer');
+function serverBuildTabCreatePatient() {
+  return HtmlPages.buildPartial('createPatient');
 }
+
+function serverBuildTabUpdateBooking() {
+  return HtmlPages.buildPartial('updateBooking');
+}
+
+function serverBuildTabUpdatePatient() {
+  return HtmlPages.buildPartial('updatePatient');
+}
+
+function serverBuildTabSearchPatient() {
+  return HtmlPages.buildPartial('searchPatient');
+}
+
+function serverBuildTabWeeks() {
+  return HtmlPages.buildPartial('weeks');
+}
+
+// Server-side functions
 
 function serverGetSearchData() {
   return Sheet.getData({ id: sheetID, name: 'Database' });
@@ -79,9 +99,13 @@ function serverEditCustomer(customerInfo) {
 }
 
 export {
-  serverBuildSearchTab,
-  serverBuildAddCustomerTab,
-  serverBuildEditCustomerTab,
+  serverBuildTabBooking,
+  serverBuildTabCreateBooking,
+  serverBuildTabCreatePatient,
+  serverBuildTabUpdateBooking,
+  serverBuildTabUpdatePatient,
+  serverBuildTabSearchPatient,
+  serverBuildTabWeeks,
   serverGetSearchData,
   serverAddCustomer,
   serverDeleteCustomerById,

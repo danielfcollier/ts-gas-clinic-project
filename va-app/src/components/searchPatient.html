@@ -1,0 +1,36 @@
+<h4>Buscar Paciente</h4>
+
+<div class="form-group">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" id="search-input" placeholder="buscar..." />
+  </div>
+</div>
+
+<!-- Header -->
+
+<table class="table table-striped table-sm">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Útlima Consulta</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody id="search-results"></tbody>
+</table>
+
+<!-- Search Result Template -->
+
+<template id="search-template">
+  <tr class="result-box">
+    <!-- <th class="patientId" scope="row"></th> -->
+    <td class="fullName"></td>
+    <td class="email"></td>
+    <td class="age"></td>
+    <td class="lastConsultation"></td>
+    <td><button type="button" class="btn btn-outline-dark bookButton btn-sm">Agendar</button></td>
+    <td><button type="button" class="btn btn-outline-dark updateButton btn-sm">Editar</button></td>
+  </tr>
+</template>

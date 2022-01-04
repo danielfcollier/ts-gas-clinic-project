@@ -1,16 +1,31 @@
 import { clickEventHandler, inputEventHandler, navClickEventHandler } from './handlers';
-import { loadAddCustomerTab, loadSearchTab } from './tabs';
+import {
+  buildTabBooking,
+  buildTabCreatePatient,
+  buildTabSearchPatient,
+  buildTabWeeks,
+} from './tabs';
 
 const events = [
   {
-    id: 'id-search',
+    id: 'tab-booking',
     type: 'click',
-    callback: loadSearchTab,
+    callback: buildTabBooking,
   },
   {
-    id: 'id-addcustomer',
+    id: 'tab-search-patient',
     type: 'click',
-    callback: loadAddCustomerTab,
+    callback: buildTabSearchPatient,
+  },
+  {
+    id: 'tab-create-patient',
+    type: 'click',
+    callback: buildTabCreatePatient,
+  },
+  {
+    id: 'tab-weeks',
+    type: 'click',
+    callback: buildTabWeeks,
   },
   {
     id: 'app',

@@ -1,20 +1,55 @@
 import loadTab from './utils/loadTab';
 
-import getCustomerById from '../customer/getCustomerById';
-import getSearchData from '../customer/getSearchData';
+import getBookingData from '../booking/getBookingData';
+import getBookingById from '../booking/getBookingById';
+import getPatientData from '../patient/getPatientData';
+import getPatientById from '../patient/getPatientById';
+import getWeekData from '../week/getWeekData';
 
-function loadSearchTab() {
-  loadTab({ serverFunction: 'serverBuildSearchTab', callback: getSearchData });
+// Visible
+
+function buildTabBooking() {
+  loadTab({ serverFunction: 'serverBuildTabBooking', callback: getBookingData });
 }
 
-function loadAddCustomerTab() {
-  loadTab({ serverFunction: 'serverBuildAddCustomerTab' });
+function buildTabSearchPatient() {
+  loadTab({ serverFunction: 'serverBuildTabSearchPatient', callback: getPatientData });
 }
 
-function loadEditCustomerTab(e) {
-  const id = e.target.dataset.customerId;
-  const params = { customerId: id };
-  loadTab({ serverFunction: 'serverBuildEditCustomerTab', callback: getCustomerById, params });
+function buildTabCreatePatient() {
+  loadTab({ serverFunction: 'serverBuildTabCreatePatient' });
 }
 
-export { loadSearchTab, loadAddCustomerTab, loadEditCustomerTab };
+function buildTabWeeks() {
+  loadTab({ serverFunction: 'serverBuildTabWeeks', callback: getWeekData });
+}
+
+// Hidden
+
+function buildTabCreateBooking(e) {
+  const id = e.target.dataset.patientId;
+  const params = { patientId: id };
+  loadTab({ serverFunction: 'serverBuildTabCreateBooking', callback: getPatientById, params });
+}
+
+function buildTabUpdateBooking(e) {
+  const id = e.target.dataset.bookingId;
+  const params = { bookingId: id };
+  loadTab({ serverFunction: 'serverBuildTabUpdateBooking', callback: getBookingById, params });
+}
+
+function buildTabUpdatePatient(e) {
+  const id = e.target.dataset.patientId;
+  const params = { patientId: id };
+  loadTab({ serverFunction: 'serverBuildTabUpdatePatient', callback: getPatientById, params });
+}
+
+export {
+  buildTabBooking,
+  buildTabCreateBooking,
+  buildTabCreatePatient,
+  buildTabUpdateBooking,
+  buildTabUpdatePatient,
+  buildTabSearchPatient,
+  buildTabWeeks,
+};

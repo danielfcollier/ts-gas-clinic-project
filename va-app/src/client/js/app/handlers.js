@@ -1,20 +1,25 @@
-import { loadEditCustomerTab, loadSearchTab } from './tabs';
+import {
+  buildTabBooking,
+  buildTabCreateBooking,
+  buildTabUpdateBooking,
+  buildTabUpdatePatient,
+} from './tabs';
 
 import changeTab from './utils/changeTab';
 
-import customerHandlers from '../customer/handlers';
-import { addCustomer } from '../customer/actionsAdd';
+import patientHandlers from '../patient/handlers';
 
 const appHandlers = {
   click: [
-    { selector: '#addButton', callback: addCustomer },
-    { selector: '.editButton', callback: loadEditCustomerTab },
-    { selector: '#cancel-changes', callback: loadSearchTab },
+    { selector: '.createBookingButton', callback: buildTabCreateBooking },
+    { selector: '.updateBookingButton', callback: buildTabUpdateBooking },
+    { selector: '.updatePatientButton', callback: buildTabUpdatePatient },
+    { selector: '#cancel-changes', callback: buildTabBooking },
   ],
   navClick: [{ selector: '.nav-link', callback: changeTab }],
 };
 
-const handlers = [appHandlers, customerHandlers];
+const handlers = [appHandlers, patientHandlers];
 
 function clickEventHandler(e) {
   for (const handler of handlers) {
