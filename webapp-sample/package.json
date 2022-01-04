@@ -14,7 +14,6 @@
     "dev:clear": "npm run build:post",
     "dev:watch": "nodemon --watch config/ --watch src/ --exec \"npm run dev:onchange\" --ext .js,.ts,.jsx,.tsx,.css,.scss,.html",
     "dev:onchange": "npm run pretty:start",
-    "prepare": "husky install",
     "pretty:lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.jsx,.tsx . --fix",
     "pretty:start": "npx prettier --write .",
     "pretty:quick": "pretty-quick --ignore-path .prettierignore --config .prettierrc.json --pattern '**/*.{ts,js,.css,.scss,.html}'",
