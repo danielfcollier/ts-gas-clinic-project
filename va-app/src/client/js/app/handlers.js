@@ -1,9 +1,4 @@
-import {
-  buildTabBooking,
-  buildTabCreateBooking,
-  buildTabUpdateBooking,
-  buildTabUpdatePatient,
-} from './tabs';
+import { buildTabBooking, buildTabCreateBooking, buildTabUpdateBooking, buildTabUpdatePatient } from './tabs';
 
 import changeTab from './utils/changeTab';
 

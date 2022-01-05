@@ -3,15 +3,20 @@ import template from './template';
 const rowTemplate = {
   textContent: template,
   dataset: {
-    deleteButton: 'customerId',
-    editButton: 'customerId',
+    bookButton: 'id',
+    editButton: 'id',
   },
 };
 
-function buildRow(record, search) {
+function buildRow(record, search, transforms = {}) {
   const row = search.template.cloneNode(true);
-  rowTemplate.textContent.forEach((key, index) => {
-    row.querySelector(`.${key}`).textContent = record[index];
+  rowTemplate.textContent.forEach((element) => {
+    const [key, index] = element;
+    if (transforms[key]) {
+      row.querySelector(`.${key}`).textContent = transforms[key](record[index]);
+    } else {
+      row.querySelector(`.${key}`).textContent = record[index];
+    }
   });
 
   return row;
@@ -19,9 +24,9 @@ function buildRow(record, search) {
 
 function setTracking(record, row) {
   Object.keys(rowTemplate.dataset).forEach((key) => {
-    const setname = rowTemplate.dataset[key];
-    const index = rowTemplate.textContent.indexOf(setname);
-    row.querySelector(`.${key}`).dataset[setname] = record[index];
+    const setName = rowTemplate.dataset[key];
+    const index = rowTemplate.textContent.indexOf(setName);
+    row.querySelector(`.${key}`).dataset[setName] = record[index];
   });
 }
 

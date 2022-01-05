@@ -1,10 +1,5 @@
 import { clickEventHandler, inputEventHandler, navClickEventHandler } from './handlers';
-import {
-  buildTabBooking,
-  buildTabCreatePatient,
-  buildTabSearchPatient,
-  buildTabWeeks,
-} from './tabs';
+import { buildTabBooking, buildTabCreatePatient, buildTabSearchPatient, buildTabWeeks } from './tabs';
 
 const events = [
   {

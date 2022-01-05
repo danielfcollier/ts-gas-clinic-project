@@ -1,19 +1,19 @@
 import loadTab from './utils/loadTab';
 
-import getBookingData from '../booking/getBookingData';
+import getBookingBulkData from '../booking/getBookingBulkData';
 import getBookingById from '../booking/getBookingById';
-import getPatientData from '../patient/getPatientData';
 import getPatientById from '../patient/getPatientById';
+import getPatientBulkData from '../patient/getPatientBulkData';
 import getWeekData from '../week/getWeekData';
 
 // Visible
 
 function buildTabBooking() {
-  loadTab({ serverFunction: 'serverBuildTabBooking', callback: getBookingData });
+  loadTab({ serverFunction: 'serverBuildTabBooking', callback: getBookingBulkData });
 }
 
 function buildTabSearchPatient() {
-  loadTab({ serverFunction: 'serverBuildTabSearchPatient', callback: getPatientData });
+  loadTab({ serverFunction: 'serverBuildTabSearchPatient', callback: getPatientBulkData });
 }
 
 function buildTabCreatePatient() {

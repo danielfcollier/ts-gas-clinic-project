@@ -1,3 +1,1 @@
-export default function getBookingById() {
-
-}
+export default function getBookingById() {}

@@ -1,4 +1,5 @@
 import createPatient from './createPatient';
+import searchPatientByInput from './searchPatientByInput';
 
 const patientHandlers = {
   click: [
@@ -8,7 +9,7 @@ const patientHandlers = {
     // { selector: '#save-changes', callback: editCustomer },
     // { selector: '#add-customer-button', callback: addCustomer }
   ],
-  input: [{ selector: '#search-input', callback: searchCustomer }],
+  input: [{ selector: '#search-input', callback: searchPatientByInput }],
 };
 
 export default patientHandlers;
