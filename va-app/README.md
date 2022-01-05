@@ -1,6 +1,6 @@
 ```bash
 npm install
-clasp create --type sheets --title 'VA App' --rootDir .gas && mv .gas/.clasp.json .
+clasp create --type standalone --title 'VA App' --rootDir .gas && mv .gas/.clasp.json .
 ```
 
 other type options:
