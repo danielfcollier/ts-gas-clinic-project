@@ -94,8 +94,8 @@ function serverGetPatientBulkData() {
   return JSON.stringify(data);
 }
 
-function serverAddCustomer(customerInfo) {
-  return oldAddCustomer(customerInfo);
+function serverAddPatient(patientData) {
+  return oldAddCustomer(patientData);
 }
 
 function serverDeleteCustomerById(id) {
@@ -117,7 +117,7 @@ export {
   serverGetBookingBulkData,
   serverGetIBookingBulkData,
   serverGetPatientBulkData,
-  serverAddCustomer,
+  serverAddPatient,
   serverDeleteCustomerById,
   serverEditCustomer,
 };

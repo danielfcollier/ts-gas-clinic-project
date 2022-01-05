@@ -1,4 +1,4 @@
-import schema from './schema';
+import schema from './config/schema';
 
 import { loadSearchTab } from '../app/tabs';
 import { TIMEOUT } from '../config/env';

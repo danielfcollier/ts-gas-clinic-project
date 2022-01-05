@@ -3,8 +3,8 @@ import template from './template';
 const rowTemplate = {
   textContent: template,
   dataset: {
-    bookButton: 'id',
-    editButton: 'id',
+    createBookingButton: 'id',
+    editPatientButton: 'id',
   },
 };
 

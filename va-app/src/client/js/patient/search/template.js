@@ -3,10 +3,10 @@ import getTemplate from '../../utils/getTemplate';
 
 const params = [
   'id',
-  'status',
-  'fullName',
   'birthDay',
-  'lastConsultationAt'
+  'fullName',
+  'lastConsultationAt',
+  'status'
 ];
 
 const template = getTemplate(schema, params);

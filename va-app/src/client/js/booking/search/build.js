@@ -3,7 +3,7 @@ import template from './template';
 const rowTemplate = {
   textContent: template,
   dataset: {
-    editButton: 'id',
+    editBookingButton: 'id',
   },
 };
 
