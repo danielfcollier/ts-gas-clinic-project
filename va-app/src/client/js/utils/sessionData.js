@@ -4,8 +4,8 @@ function retrieveSessionData(variable) {
   return JSON.parse(window.sessionStorage.getItem(variable));
 }
 
-function storeSessionData(variable, data) {
-  window.sessionStorage.setItem(variable, JSON.stringify(data));
+function storeSessionData(variable, data, jsonTransform = true) {
+  window.sessionStorage.setItem(variable, jsonTransform ? JSON.stringify(data) : data);
 }
 
 function getSessionDataById(variable, id) {
