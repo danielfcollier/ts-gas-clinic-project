@@ -1,6 +1,6 @@
 export default class Sheet {
-  static getData(params) {
-    const sheet = SpreadsheetApp.openById(params.id).getSheetByName(params.name);
+  static getBulkData(sheetParams) {
+    const sheet = SpreadsheetApp.openById(sheetParams.id).getSheetByName(sheetParams.name);
 
     const startRow = 2;
     const startColumn = 1;

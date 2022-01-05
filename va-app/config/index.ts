@@ -1,5 +1,3 @@
-import { SHEET_ID } from './env';
-
 enum TimerOptions {
   morning = 9,
   afternoon = 14,
@@ -7,5 +5,4 @@ enum TimerOptions {
 
 // Sheet
 
-const sheetID = SHEET_ID;
-export { sheetID, TimerOptions };
+export { TimerOptions };

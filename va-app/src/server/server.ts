@@ -1,11 +1,12 @@
-import { sheetID } from '../../config/index';
+import { SHEET } from '../../config/env';
 import HtmlPages from '../library/HtmlPages';
 import Sheet from '../library/Sheet';
 
 // TODO: substitute this function.
 function oldDeleteById(id) {
-  const ss = SpreadsheetApp.openById(sheetID);
-  const ws = ss.getSheetByName('Database');
+  const sheet = SHEET.PATIENT;
+  const ss = SpreadsheetApp.openById(sheet.id);
+  const ws = ss.getSheetByName(sheet.name);
   const customerIds = ws
     .getRange(2, 1, ws.getLastRow() - 1, 1)
     .getValues()
@@ -18,8 +19,9 @@ function oldDeleteById(id) {
 
 // TODO: substitute this function.
 function oldEditCustomer(customerInfo) {
-  const ss = SpreadsheetApp.openById(sheetID);
-  const ws = ss.getSheetByName('Database');
+  const sheet = SHEET.PATIENT;
+  const ss = SpreadsheetApp.openById(sheet.id);
+  const ws = ss.getSheetByName(sheet.name);
   const customerIds = ws
     .getRange(2, 1, ws.getLastRow() - 1, 1)
     .getValues()
@@ -36,18 +38,13 @@ function oldAddCustomer(customerInfo) {
   const ws = ss.getSheetByName('Database');
   const idArray = ws.getRange(2, 1, ws.getLastRow() - 1, 1).getValues();
   let maxNum = 0;
-  idArray.forEach(r => {
+  idArray.forEach((r) => {
     maxNum = r[0] > maxNum ? r[0] : maxNum;
   });
 
   const newId = maxNum + 1;
 
-  ws.appendRow([
-    newId,
-    customerInfo.fullName,
-    customerInfo.email,
-    customerInfo.gender
-  ]);
+  ws.appendRow([newId, customerInfo.fullName, customerInfo.email, customerInfo.gender]);
 }
 
 // Build HTML Components
@@ -82,8 +79,19 @@ function serverBuildTabWeeks() {
 
 // Server-side functions
 
-function serverGetSearchData() {
-  return Sheet.getData({ id: sheetID, name: 'Database' });
+function serverGetBookingBulkData() {
+  const data = Sheet.getBulkData(SHEET.IBOOKING);
+  return JSON.stringify(data);
+}
+
+function serverGetIBookingBulkData() {
+  const data = Sheet.getBulkData(SHEET.PATIENT);
+  return JSON.stringify(data);
+}
+
+function serverGetPatientBulkData() {
+  const data = Sheet.getBulkData(SHEET.PATIENT);
+  return JSON.stringify(data);
 }
 
 function serverAddCustomer(customerInfo) {
@@ -106,7 +114,9 @@ export {
   serverBuildTabUpdatePatient,
   serverBuildTabSearchPatient,
   serverBuildTabWeeks,
-  serverGetSearchData,
+  serverGetBookingBulkData,
+  serverGetIBookingBulkData,
+  serverGetPatientBulkData,
   serverAddCustomer,
   serverDeleteCustomerById,
   serverEditCustomer,
