@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["es2019"],
-    "target": "es2019",
-    "experimentalDecorators": true
+    "lib": ["ES2019"],
+    "target": "ES2019",
+    "types": ["google-apps-script"],
+    "experimentalDecorators": true,
   }
 }
