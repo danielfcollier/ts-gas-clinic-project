@@ -1,22 +1,42 @@
-<h4>Add a Customer</h4>
+<h4>Agendar Consulta</h4>
 
 <div class="add-customer-form">
   <div class="mb-3">
-    <label for="full-name">Full Name</label>
-    <input type="text" class="form-control" id="fullName" />
+    <label for="fullName">Nome</label>
+    <input type="text" class="form-control" id="fullName" readonly />
   </div>
 
   <div class="mb-3">
-    <label for="email">Email</label>
-    <input type="text" class="form-control" id="email" />
+    <label for="consultationDate">Data</label>
+    <input type="text" class="form-control" id="consultationDate" />
   </div>
 
   <div class="mb-3">
-    <label for="gender">Gender</label>
-    <input type="text" class="form-control" id="gender" />
+    <label for="consultationTime">Horário</label>
+    <input type="text" class="form-control" id="consultationTime" />
   </div>
 
-  <button class="btn btn-primary" id="addButton">Add Customer</button>
+  <div class="mb-3">
+    <label for="consultationSet">Tipo</label>
+    <input type="text" class="form-control" id="consultationSet" />
+  </div>
+
+  <div class="mb-3">
+    <label for="consultationType">Modalidade</label>
+    <input type="text" class="form-control" id="consultationType" />
+  </div>
+
+  <div class="mb-3">
+    <label for="paymentMethod">Pagamento</label>
+    <input type="text" class="form-control" id="paymentMethod" />
+  </div>
+
+  <div class="mb-3">
+    <label for="consultationValue">Valor</label>
+    <input type="text" class="form-control" id="consultationValue" />
+  </div>
+
+  <button class="btn btn-primary" id="addButton">Agendar</button>
 </div>
 
-<div class="alert alert-success invisible mt-3" id="save-success-alert" role="alert">New Customer Added!</div>
+<div class="alert alert-success invisible mt-3" id="save-success-alert" role="alert">Consulta Agendada!</div>

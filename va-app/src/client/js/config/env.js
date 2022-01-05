@@ -1,3 +1,4 @@
+const INDEX_FOR_ID = 0;
 const TIMEOUT = 1000;
 
-export { TIMEOUT };
+export { INDEX_FOR_ID, TIMEOUT };

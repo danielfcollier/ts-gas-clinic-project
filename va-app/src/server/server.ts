@@ -98,6 +98,10 @@ function serverAddPatient(patientData) {
   return oldAddCustomer(patientData);
 }
 
+function serverUpdatePatientById(patientData) {
+  return true;
+}
+
 function serverDeleteCustomerById(id) {
   return oldDeleteById(id);
 }
@@ -118,6 +122,7 @@ export {
   serverGetIBookingBulkData,
   serverGetPatientBulkData,
   serverAddPatient,
+  serverUpdatePatientById,
   serverDeleteCustomerById,
   serverEditCustomer,
 };

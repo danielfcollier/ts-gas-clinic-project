@@ -1,4 +1,4 @@
-const INDEX_FOR_ID = 0;
+import { INDEX_FOR_ID } from '../config/env';
 
 function retrieveSessionData(variable) {
   return JSON.parse(window.sessionStorage.getItem(variable));

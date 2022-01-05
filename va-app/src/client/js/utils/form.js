@@ -13,9 +13,11 @@ function getFormFields(schema) {
   return data;
 }
 
-function setFormFields(schema, data) {
-  schema.forEach((parameter, index) => {
-    window.document.getElementById(parameter).value = data[index];
+function setFormFields(formFields, schema, data) {
+  formFields.forEach((parameter) => {
+    // eslint-disable-next-line
+    console.log({ parameter, index: schema.indexOf(parameter), data })
+    window.document.getElementById(parameter).value = data[schema.indexOf(parameter)];
   });
 }
 

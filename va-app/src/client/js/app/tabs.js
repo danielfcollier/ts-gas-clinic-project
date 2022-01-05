@@ -27,7 +27,7 @@ function buildTabWeeks() {
 // Hidden
 
 function buildTabCreateBooking(e) {
-  const id = e.target.dataset.patientId;
+  const id = e.target.dataset.id;
   const params = { patientId: id };
   loadTab({ serverFunction: 'serverBuildTabCreateBooking', callback: getPatientById, params });
 }
@@ -39,8 +39,8 @@ function buildTabUpdateBooking(e) {
 }
 
 function buildTabUpdatePatient(e) {
-  const id = e.target.dataset.patientId;
-  const params = { patientId: id };
+  const id = e.target.dataset.id;
+  const params = { id };
   loadTab({ serverFunction: 'serverBuildTabUpdatePatient', callback: getPatientById, params });
 }
 

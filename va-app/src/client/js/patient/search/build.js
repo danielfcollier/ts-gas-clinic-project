@@ -4,7 +4,7 @@ const rowTemplate = {
   textContent: template,
   dataset: {
     createBookingButton: 'id',
-    editPatientButton: 'id',
+    updatePatientButton: 'id',
   },
 };
 
@@ -25,8 +25,15 @@ function buildRow(record, search, transforms = {}) {
 function setTracking(record, row) {
   Object.keys(rowTemplate.dataset).forEach((key) => {
     const setName = rowTemplate.dataset[key];
-    const index = rowTemplate.textContent.indexOf(setName);
-    row.querySelector(`.${key}`).dataset[setName] = record[index];
+    const positionElement = rowTemplate.textContent.filter(element => {
+      const [name,] = element;
+      return setName === name;
+    });
+    const position = positionElement.map(element => {
+      const [, index] = element;
+      return index;
+    })[0];
+    row.querySelector(`.${key}`).dataset[setName] = record[position];
   });
 }
 
