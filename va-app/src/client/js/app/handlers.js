@@ -2,7 +2,8 @@ import { buildTabBooking, buildTabCreateBooking, buildTabUpdateBooking, buildTab
 
 import changeTab from './utils/changeTab';
 
-import patientHandlers from '../patient/handlers';
+import bookingHandlers from '../booking/config/handlers';
+import patientHandlers from '../patient/config/handlers';
 
 const appHandlers = {
   click: [
@@ -14,7 +15,7 @@ const appHandlers = {
   navClick: [{ selector: '.nav-link', callback: changeTab }],
 };
 
-const handlers = [appHandlers, patientHandlers];
+const handlers = [appHandlers, bookingHandlers, patientHandlers];
 
 function clickEventHandler(e) {
   for (const handler of handlers) {

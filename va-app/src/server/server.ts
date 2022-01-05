@@ -80,12 +80,12 @@ function serverBuildTabWeeks() {
 // Server-side functions
 
 function serverGetBookingBulkData() {
-  const data = Sheet.getBulkData(SHEET.IBOOKING);
+  const data = Sheet.getBulkData(SHEET.BOOKING);
   return JSON.stringify(data);
 }
 
 function serverGetIBookingBulkData() {
-  const data = Sheet.getBulkData(SHEET.PATIENT);
+  const data = Sheet.getBulkData(SHEET.IBOOKING);
   return JSON.stringify(data);
 }
 
