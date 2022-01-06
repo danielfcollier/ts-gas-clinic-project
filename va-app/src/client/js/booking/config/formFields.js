@@ -10,7 +10,7 @@ const formFields = [
   'consultationType',
   'consultationValue',
   //
-  // 'paymentMethod',
+  'paymentMethod',
   // 'paymentStatus',
   // 'paymentId',
   // 'paymentDueDate',

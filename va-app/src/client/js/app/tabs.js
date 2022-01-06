@@ -1,5 +1,6 @@
 import loadTab from './utils/loadTab';
 
+import createBookingByPatientId from '../booking/createBookingByPatientId';
 import getBookingBulkData from '../booking/getBookingBulkData';
 import getBookingById from '../booking/getBookingById';
 import getPatientById from '../patient/getPatientById';
@@ -29,7 +30,7 @@ function buildTabWeeks() {
 function buildTabCreateBooking(e) {
   const id = e.target.dataset.id;
   const params = { patientId: id };
-  loadTab({ serverFunction: 'serverBuildTabCreateBooking', callback: getPatientById, params });
+  loadTab({ serverFunction: 'serverBuildTabCreateBooking', callback: createBookingByPatientId, params });
 }
 
 function buildTabUpdateBooking(e) {

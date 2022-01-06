@@ -6,5 +6,5 @@ import { setFormFields } from '../utils/form';
 
 export default function getPatientById(params) {
   const data = getSessionDataById('patientBulkData', params.id);
-  setFormFields(formFields, schema, data);
+  setFormFields(formFields, data, schema);
 }
