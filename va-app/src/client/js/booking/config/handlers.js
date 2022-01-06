@@ -1,9 +1,11 @@
+import displayCancelConfirmation from '../displayCancelConfirmation';
 import searchBookingByInput from '../searchBookingByInput';
 
-import { buildTabBooking, buildTabCreateBooking, buildTabUpdateBooking } from '../../app/tabs';
+import { buildTabCreateBooking, buildTabUpdateBooking } from '../../app/tabs';
 
 const bookingHandlers = {
   click: [
+    { selector: '.confirmCancelBookingButton', callback: displayCancelConfirmation },
     { selector: '.createBookingButton', callback: buildTabCreateBooking },
     { selector: '.updateBookingButton', callback: buildTabUpdateBooking },
     //   // { selector: '#updateBookingSaveButton', callback: editCustomer }
