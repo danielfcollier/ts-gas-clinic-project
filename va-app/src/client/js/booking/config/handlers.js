@@ -1,13 +1,13 @@
 import searchBookingByInput from '../searchBookingByInput';
 
+import { buildTabBooking, buildTabCreateBooking, buildTabUpdateBooking } from '../../app/tabs';
+
 const bookingHandlers = {
-  // click: [
-  //   // { selector: '#createPatientButton', callback: createPatient },
-  //   // { selector: '.beforeDeleteButton', callback: deleteDisplayConfirmation },
-  //   // { selector: '.deleteButton', callback: deleteCustomer },
-  //   // { selector: '#save-changes', callback: editCustomer },
-  //   // { selector: '#add-customer-button', callback: addCustomer }
-  // ],
+  click: [
+    { selector: '.createBookingButton', callback: buildTabCreateBooking },
+    { selector: '.updateBookingButton', callback: buildTabUpdateBooking },
+    //   // { selector: '#updateBookingSaveButton', callback: editCustomer }
+  ],
   input: [{ selector: '#search-booking-input', callback: searchBookingByInput }],
 };
 

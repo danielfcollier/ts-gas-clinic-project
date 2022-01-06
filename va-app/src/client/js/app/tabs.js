@@ -34,8 +34,8 @@ function buildTabCreateBooking(e) {
 }
 
 function buildTabUpdateBooking(e) {
-  const id = e.target.dataset.bookingId;
-  const params = { bookingId: id };
+  const id = e.target.dataset.id;
+  const params = { id };
   loadTab({ serverFunction: 'serverBuildTabUpdateBooking', callback: getBookingById, params });
 }
 

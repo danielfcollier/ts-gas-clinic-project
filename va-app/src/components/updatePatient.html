@@ -2,6 +2,10 @@
 
 <div class="edit-customer-form">
   <div class="mb-3">
+    <input type="text" class="form-control" id="id" hidden />
+  </div>
+
+  <div class="mb-3">
     <label for="fullName">Nome Completo</label>
     <input type="text" class="form-control" id="fullName" />
   </div>
@@ -41,8 +45,8 @@
     <input type="text" class="form-control" id="location" />
   </div>
 
-  <button class="btn btn-primary" id="save-changes">Atualizar</button>
-  <button class="btn btn-primary" id="cancel-changes">Cancelar</button>
+  <button class="btn btn-primary" id="updatePatientSaveButton">Atualizar</button>
+  <button class="btn btn-primary" id="cancelButton">Cancelar</button>
 </div>
 
 <div class="alert alert-success invisible mt-3" id="save-success-alert" role="alert">Cadastro Atualizado!</div>

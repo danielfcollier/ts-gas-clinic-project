@@ -1,16 +1,12 @@
-import { buildTabBooking, buildTabCreateBooking, buildTabUpdateBooking, buildTabUpdatePatient } from './tabs';
-
 import changeTab from './utils/changeTab';
+import { buildTabBooking } from './tabs';
 
 import bookingHandlers from '../booking/config/handlers';
 import patientHandlers from '../patient/config/handlers';
 
 const appHandlers = {
   click: [
-    // { selector: '.createBookingButton', callback: buildTabCreateBooking },
-    { selector: '.updateBookingButton', callback: buildTabUpdateBooking },
-    // { selector: '.updatePatientButton', callback: buildTabUpdatePatient },
-    { selector: '#cancel-changes', callback: buildTabBooking },
+    { selector: '#cancelButton', callback: buildTabBooking }
   ],
   navClick: [{ selector: '.nav-link', callback: changeTab }],
 };
