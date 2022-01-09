@@ -27,12 +27,12 @@ export default function searchBookingByInput() {
   }
 
   const searchResults = search.data.filter((record) => {
-
     const position = template
-      .filter(element => {
-        const [parameter,] = element;
+      .filter((element) => {
+        const [parameter] = element;
         return parameter === searchField;
-      }).map(element => {
+      })
+      .map((element) => {
         const [, position] = element;
         return position;
       })[0];

@@ -8,7 +8,7 @@ const formFields = [
   'email',
   'birthDay',
   'postalCode',
-  'location' // , default Florianópolis
+  'location', // , default Florianópolis
   // 'folderId',  depois que retornar job
   // 'customerId', depois que voltar da Asaas
   // 'createdAt', new Date()

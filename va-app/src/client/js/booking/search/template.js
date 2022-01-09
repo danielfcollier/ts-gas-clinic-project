@@ -9,7 +9,7 @@ const params = [
   'consultationSet',
   'consultationType',
   'consultationValue',
-  'paymentStatus'
+  'paymentStatus',
 ];
 
 const template = getTemplate(schema, params);

@@ -25,11 +25,11 @@ function buildRow(record, search, transforms = {}) {
 function setTracking(record, row) {
   Object.keys(rowTemplate.dataset).forEach((key) => {
     const setName = rowTemplate.dataset[key];
-    const positionElement = rowTemplate.textContent.filter(element => {
-      const [name,] = element;
+    const positionElement = rowTemplate.textContent.filter((element) => {
+      const [name] = element;
       return setName === name;
     });
-    const position = positionElement.map(element => {
+    const position = positionElement.map((element) => {
       const [, index] = element;
       return index;
     })[0];

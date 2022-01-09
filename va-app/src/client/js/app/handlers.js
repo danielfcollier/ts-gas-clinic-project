@@ -5,9 +5,7 @@ import bookingHandlers from '../booking/config/handlers';
 import patientHandlers from '../patient/config/handlers';
 
 const appHandlers = {
-  click: [
-    { selector: '#cancelButton', callback: buildTabBooking }
-  ],
+  click: [{ selector: '#cancelButton', callback: buildTabBooking }],
   navClick: [{ selector: '.nav-link', callback: changeTab }],
 };
 
