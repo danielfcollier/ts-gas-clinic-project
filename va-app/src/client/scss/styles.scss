@@ -1,3 +1,9 @@
+$main-color: #6610f2;
+
+$primary: $main-color;
+
+@import 'bootstrap';
+
 .nav-link {
   cursor: pointer;
 }
