@@ -1,6 +1,6 @@
 <h4>Agendar Consulta</h4>
 
-<div class="add-customer-form">
+<form class="add-customer-form" id="needs-validation" novalidate>
   <div class="mb-3">
     <label for="fullName">Paciente</label>
     <input type="text" class="form-control" id="fullName" readonly />
@@ -8,41 +8,92 @@
 
   <div class="mb-3">
     <label for="consultationMoment">Momento</label>
-    <input type="text" class="form-control" id="consultationMoment" />
+    <input type="text" class="form-control" id="consultationMoment" readonly />
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect01">Momento</label>
+    <select class="form-select" id="inputGroupSelect01" readonly>
+      <option value="1" selected>Seguimento</option>
+      <option value="2">1ª Consulta</option>
+    </select>
   </div>
 
   <div class="mb-3">
     <label for="consultationDate">Data</label>
-    <input type="text" class="form-control" id="consultationDate" />
+    <input type="text" class="form-control" id="consultationDate" required />
+    <div class="invalid-feedback">Insira uma data para a consulta.</div>
   </div>
 
   <div class="mb-3">
     <label for="consultationTime">Horário</label>
-    <input type="text" class="form-control" id="consultationTime" />
+    <input type="text" class="form-control" id="consultationTime" required />
+    <div class="invalid-feedback">Insira um horário para a consulta.</div>
   </div>
 
   <div class="mb-3">
     <label for="consultationSet">Tipo</label>
-    <input type="text" class="form-control" id="consultationSet" />
+    <input type="text" class="form-control" id="consultationSet" required />
+    <div class="invalid-feedback">Please choose a username.</div>
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect02">Tipo</label>
+    <select class="form-select" id="inputGroupSelect02" required>
+      <option value="1" selected>Online</option>
+      <option value="2">Presencial</option>
+      <option value="3">DIU</option>
+      <option value="4">Emergência</option>
+    </select>
+    <div class="invalid-feedback">Selecione um tipo de consulta.</div>
   </div>
 
   <div class="mb-3">
     <label for="consultationType">Modalidade</label>
-    <input type="text" class="form-control" id="consultationType" />
+    <input type="text" class="form-control" id="consultationType" required />
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect03">Modalidade</label>
+    <select class="form-select" id="inputGroupSelect03" required>
+      <option value="1" selected>Beija-flor</option>
+      <option value="2">Girassol</option>
+      <option value="3">Artemísia</option>
+    </select>
+    <div class="invalid-feedback">Selecione uma modalidade.</div>
   </div>
 
   <div class="mb-3">
     <label for="paymentMethod">Pagamento</label>
-    <input type="text" class="form-control" id="paymentMethod" />
+    <input
+      type="text"
+      class="form-control"
+      id="paymentMethod"
+      onkeypress="jQuery(this).mask('000.000.000-00')"
+      required
+    />
+    <div class="invalid-feedback">Escolha uma forma de pagamento.</div>
+  </div>
+
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="inputGroupSelect04">Pagamento</label>
+    <select class="form-select" id="inputGroupSelect04" required>
+      <option value="1" selected>Padrão</option>
+      <option value="2">Autorizada</option>
+      <option value="3">Sem Cobrança</option>
+      <option value="3">Conta Bancária</option>
+    </select>
+    <div class="invalid-feedback">Escolha uma forma de pagamento.</div>
   </div>
 
   <div class="mb-3">
     <label for="consultationValue">Valor</label>
-    <input type="text" class="form-control" id="consultationValue" />
+    <input type="text" class="form-control" id="consultationValue" required />
+    <div class="invalid-feedback">Insira o valor autorizado para a consulta.</div>
   </div>
 
-  <button class="btn btn-primary" id="addButton">Agendar</button>
+  <button class="btn btn-primary" id="submitButton" onsubmit="return false" type="submit">Agendar</button>
   <button class="btn btn-primary" id="cancelButton">Cancelar</button>
-</div>
+</form>
 
 <div class="alert alert-success invisible mt-3" id="save-success-alert" role="alert">Consulta Agendada!</div>
