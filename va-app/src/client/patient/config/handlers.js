@@ -1,6 +1,6 @@
 import createPatient from '../createPatient';
 import searchPatientByInput from '../searchPatientByInput';
-import { buildTabBooking, buildTabUpdatePatient } from '../../app/tabs';
+import { buildTabBooking, buildTabUpdatePatient } from '../../tabs';
 
 const patientHandlers = {
   click: [

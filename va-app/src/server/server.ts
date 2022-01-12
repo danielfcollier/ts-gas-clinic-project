@@ -1,6 +1,6 @@
 import { SHEET } from '../../config/env';
-import HtmlPages from '../library/HtmlPages';
-import Sheet from '../library/Sheet';
+import HtmlPages from './library/HtmlPages';
+import Sheet from './library/Sheet';
 
 // TODO: substitute this function.
 function oldDeleteById(id) {
@@ -50,27 +50,27 @@ function oldAddCustomer(customerInfo) {
 // Build HTML Components
 
 function serverBuildTabBooking() {
-  return HtmlPages.buildPartial('booking');
+  return HtmlPages.buildPartial('bookingView');
 }
 
 function serverBuildTabCreateBooking() {
-  return HtmlPages.buildPartial('createBooking');
+  return HtmlPages.buildPartial('bookingCreate');
 }
 
 function serverBuildTabCreatePatient() {
-  return HtmlPages.buildPartial('createPatient');
+  return HtmlPages.buildPartial('patientCreate');
 }
 
 function serverBuildTabUpdateBooking() {
-  return HtmlPages.buildPartial('updateBooking');
+  return HtmlPages.buildPartial('bookingUpdate');
 }
 
 function serverBuildTabUpdatePatient() {
-  return HtmlPages.buildPartial('updatePatient');
+  return HtmlPages.buildPartial('patientUpdate');
 }
 
 function serverBuildTabSearchPatient() {
-  return HtmlPages.buildPartial('searchPatient');
+  return HtmlPages.buildPartial('patientSearch');
 }
 
 function serverBuildTabWeeks() {

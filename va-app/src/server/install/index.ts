@@ -1,5 +1,5 @@
 import { TimerOptions } from '../../../config/index';
-import Trigger from '../../library/Trigger';
+import Trigger from '../library/Trigger';
 
 function install() {
   Trigger.init();

@@ -1,4 +1,4 @@
-import getAge from '../../utils/getAge';
+import getAge from '../../library/getAge';
 
 const transforms = {
   birthDay: (birthDay) => getAge(birthDay),

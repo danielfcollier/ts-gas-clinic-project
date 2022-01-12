@@ -1,7 +1,7 @@
 import displayCancelConfirmation from '../displayCancelConfirmation';
 import searchBookingByInput from '../searchBookingByInput';
 
-import { buildTabCreateBooking, buildTabUpdateBooking } from '../../app/tabs';
+import { buildTabCreateBooking, buildTabUpdateBooking } from '../../tabs';
 
 const bookingHandlers = {
   click: [

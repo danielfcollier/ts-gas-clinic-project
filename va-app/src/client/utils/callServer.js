@@ -1,11 +1,11 @@
-import { loadingStart, loadingEnd } from './loading';
+import { loaderStart, loaderEnd } from './spinLoader';
 
 export default function callServer(successHandlerCallback, serverFunction, params) {
-  loadingStart();
+  loaderStart();
   google.script.run
     .withSuccessHandler((args) => {
       const result = successHandlerCallback(args);
-      loadingEnd();
+      loaderEnd();
 
       return result;
     })

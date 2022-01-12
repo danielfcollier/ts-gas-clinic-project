@@ -1,9 +1,9 @@
-function loadingStart() {
+function loaderStart() {
   window.document.getElementById('loading').classList.remove('invisible');
 }
 
-function loadingEnd() {
+function loaderEnd() {
   window.document.getElementById('loading').classList.add('invisible');
 }
 
-export { loadingStart, loadingEnd };
+export { loaderStart, loaderEnd };

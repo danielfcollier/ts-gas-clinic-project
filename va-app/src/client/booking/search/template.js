@@ -1,5 +1,5 @@
 import schema from '../config/schema';
-import getTemplate from '../../utils/getTemplate';
+import getTemplate from '../../form/getTemplate';
 
 const params = [
   'id',

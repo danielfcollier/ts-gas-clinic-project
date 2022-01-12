@@ -1,8 +1,8 @@
-import changeTab from './utils/changeTab';
+import changeTab from './utils/tabChange';
 import { buildTabBooking } from './tabs';
 
-import bookingHandlers from '../booking/config/handlers';
-import patientHandlers from '../patient/config/handlers';
+import bookingHandlers from './booking/config/handlers';
+import patientHandlers from './patient/config/handlers';
 
 const appHandlers = {
   click: [{ selector: '#cancelButton', callback: buildTabBooking }],

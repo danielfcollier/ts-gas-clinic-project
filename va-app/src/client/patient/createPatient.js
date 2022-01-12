@@ -1,6 +1,6 @@
 import callServer from '../utils/callServer';
 import formFields from './config/formFields';
-import { clearFormFields, getFormFields } from '../utils/form';
+import { clearFormFields, getFormFields } from '../form/formFields';
 import { saveStatus } from '../utils/saveStatus';
 
 export default function createPatient() {
