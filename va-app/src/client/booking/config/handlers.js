@@ -11,9 +11,7 @@ const bookingHandlers = {
     // { selector: '#submitButton', callback: submitCreateBooking },
     //   // { selector: '#updateBookingSaveButton', callback: editCustomer }
   ],
-  input: [
-    { selector: '#search-booking-input', callback: searchBookingByInput },
-  ],
+  input: [{ selector: '#search-booking-input', callback: searchBookingByInput }],
 };
 
 export default bookingHandlers;

@@ -9,10 +9,10 @@ export default function submitHandler(event, validations) {
 
   if (isValidForm) {
     // eslint-disable-next-line
-    console.log("Form valid!!!");
+    console.log('Form valid!!!');
   } else {
     // eslint-disable-next-line
-    console.log("Form invalid...");
+    console.log('Form invalid...');
   }
 
   return false;

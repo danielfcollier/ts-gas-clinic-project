@@ -10,7 +10,7 @@ export default function checkFormValidation(form, validations) {
 
       if (isFormInvalid) return false;
     }
-  };
+  }
 
   return true;
 }
