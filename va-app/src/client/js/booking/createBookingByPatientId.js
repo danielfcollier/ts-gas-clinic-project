@@ -7,40 +7,79 @@ import { setFormFields } from '../utils/form';
 
 const filterParams = ['fullName'];
 
-export default function createBookingByPatientId(params) {
+import inputValidator from '../utils/inputValidator';
+
+// TODO: mensagem de validação: mostrar e tirar!
+const inputsToValidate = {
+  consultationDate: { validator: (value) => value === 'R$ 1,00', mask: (value) => `R$ ${value},00` },
+  consultationValue: { validator: (value) => value === 'R$ 1,00', placeHolder: 'R$ 0,00' },
+};
+
+function inputHandler(e) {
+  const { id } = e.target;
+  const element = window.document.getElementById(id);
+  const { value } = element;
+  const previousValue = value.slice(0, -1);
+
+  if (inputsToValidate[id].mask) {
+    element.value = inputsToValidate[id].mask(value, previousValue);
+  }
+
+  if (inputsToValidate[id].validator) {
+    inputValidator({ ...inputsToValidate[id], value: element.value, element });
+  }
+
+  return true;
+}
+
+function validateForm(form) {
+  const { elements } = form;
+
+  for (let index = 0; index < elements.length; index++) {
+    const element = elements[index];
+    const { id, value } = element;
+
+    if (inputsToValidate[id]) {
+      inputValidator({ ...inputsToValidate[id], value, element, placeHolder: '' });
+    }
+  }
+
+  return true;
+}
+
+function checkFormValidation(form) {
+  const { elements } = form;
+
+  for (let index = 0; index < elements.length; index++) {
+    const element = elements[index];
+    const { id } = element;
+
+    if (inputsToValidate[id]) {
+      const isFormInvalid = !element.classList.contains('is-valid');
+
+      if (isFormInvalid) return false;
+    }
+  };
+
+  return true;
+}
+
+function submitHandler(e) {
+  e.preventDefault();
+  e.stopPropagation();
+
   const form = window.document.getElementById('needs-validation');
+  checkFormValidation(form);
 
-  // Loop over them and prevent submission
+  return false;
+}
 
-  form.addEventListener(
-    'submit',
-    (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      // form.classList.add('was-validated');
-      // eslint-disable-next-line
-      console.log({ msg: 'here 1', form });
+function setFormEvents(form) {
+  form.addEventListener('input', inputHandler);
+  form.addEventListener('submit', submitHandler);
+}
 
-      for (let index = 0; index < form.elements.length; index++) {
-        const element = form.elements[index];
-        const { id, value } = element;
-        // eslint-disable-next-line
-        console.log({ id, value, element });
-        if (value === '2') {
-          element.classList.add('is-invalid');
-          return false;
-        }
-      };
-
-      // eslint-disable-next-line
-      console.log('Success process here...');
-
-      // form.classList.add('was-validated');
-      return false;
-    },
-    false,
-  );
-
+export default function createBookingByPatientId(params) {
   const patientData = getSessionDataById('patientBulkData', params.patientId);
 
   const filterValues = [];
@@ -56,5 +95,10 @@ export default function createBookingByPatientId(params) {
 
   const formData = [...formDefault, ...filterValues];
 
+  const form = window.document.getElementById('needs-validation');
+  // TODO: mudar formFields
   setFormFields([...formFields, ...filterParams], formData);
+  setFormEvents(form);
+  validateForm(form);
+  checkFormValidation(form);
 }
