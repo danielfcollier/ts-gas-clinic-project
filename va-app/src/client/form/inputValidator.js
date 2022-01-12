@@ -1,5 +1,6 @@
 export default function inputValidator(input) {
-  const { element, placeHolder, validator, value } = input;
+  const { element, placeHolder, validator } = input;
+  const { value } = element;
 
   const isValid = 'is-valid';
   const isInvalid = 'is-invalid';

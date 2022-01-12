@@ -5,10 +5,10 @@ export default function validateForm(form, validations) {
 
   for (let index = 0; index < elements.length; index++) {
     const element = elements[index];
-    const { id, value } = element;
+    const { id } = element;
 
     if (validations[id]) {
-      inputValidator({ ...validations[id], value, element, placeHolder: '' });
+      inputValidator({ placeHolder: '', ...validations[id], element });
     }
   }
 
