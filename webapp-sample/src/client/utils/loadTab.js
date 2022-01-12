@@ -1,4 +1,4 @@
-import callServer from '../../utils/callServer';
+import callServer from './callServer';
 
 export default function loadTab({ serverFunction, id, callback, params }) {
   const defaultId = 'app';

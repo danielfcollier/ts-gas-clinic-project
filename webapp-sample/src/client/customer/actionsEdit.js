@@ -1,7 +1,7 @@
 import schema from './schema';
 
-import { loadSearchTab } from '../app/tabs';
-import { TIMEOUT } from '../config/env';
+import { loadSearchTab } from '../tabs';
+import { TIMEOUT } from '../env';
 import callServer from '../utils/callServer';
 import { clearFormFields, getFormFields } from '../utils/form';
 

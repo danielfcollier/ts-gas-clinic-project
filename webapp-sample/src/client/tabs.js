@@ -1,7 +1,7 @@
 import loadTab from './utils/loadTab';
 
-import getCustomerById from '../customer/getCustomerById';
-import getSearchData from '../customer/getSearchData';
+import getCustomerById from './customer/getCustomerById';
+import getSearchData from './customer/getSearchData';
 
 function loadSearchTab() {
   loadTab({ serverFunction: 'serverBuildSearchTab', callback: getSearchData });
