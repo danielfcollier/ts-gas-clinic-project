@@ -7,7 +7,7 @@ export default function displayBookingData() {
   const display = {
     data: retrieveSessionData('iBookingBulkData'),
     box: window.document.getElementById('search-results'),
-    template: window.document.getElementById('search-template').content,
+    template: window.document.getElementById('search-template').content
   };
 
   const displayResults = display.data;

@@ -52,5 +52,5 @@ export {
   buildTabUpdateBooking,
   buildTabUpdatePatient,
   buildTabSearchPatient,
-  buildTabWeeks,
+  buildTabWeeks
 };

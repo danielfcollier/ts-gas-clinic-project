@@ -11,7 +11,7 @@ export default function searchPatientByInput() {
     data: retrieveSessionData('patientBulkData'),
     input: window.document.getElementById('search-patient-input').value,
     box: window.document.getElementById('search-results'),
-    template: window.document.getElementById('search-template').content,
+    template: window.document.getElementById('search-template').content
   };
 
   const clearResults = () => {

@@ -5,8 +5,8 @@ const rowTemplate = {
   dataset: {
     updateBookingButton: 'id',
     cancelBookingButton: 'id',
-    confirmCancelBookingButton: 'id',
-  },
+    confirmCancelBookingButton: 'id'
+  }
 };
 
 function buildRow(record, search, transforms = {}) {

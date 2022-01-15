@@ -5,38 +5,38 @@ const events = [
   {
     id: 'tab-booking',
     type: 'click',
-    callback: buildTabBooking,
+    callback: buildTabBooking
   },
   {
     id: 'tab-search-patient',
     type: 'click',
-    callback: buildTabSearchPatient,
+    callback: buildTabSearchPatient
   },
   {
     id: 'tab-create-patient',
     type: 'click',
-    callback: buildTabCreatePatient,
+    callback: buildTabCreatePatient
   },
   {
     id: 'tab-weeks',
     type: 'click',
-    callback: buildTabWeeks,
+    callback: buildTabWeeks
   },
   {
     id: 'app',
     type: 'click',
-    callback: clickEventHandler,
+    callback: clickEventHandler
   },
   {
     id: 'app',
     type: 'input',
-    callback: inputEventHandler,
+    callback: inputEventHandler
   },
   {
     id: 'navigation',
     type: 'click',
-    callback: navClickEventHandler,
-  },
+    callback: navClickEventHandler
+  }
 ];
 
 export default events;

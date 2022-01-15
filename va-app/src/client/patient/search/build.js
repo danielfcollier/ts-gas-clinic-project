@@ -4,8 +4,8 @@ const rowTemplate = {
   textContent: template,
   dataset: {
     createBookingButton: 'id',
-    updatePatientButton: 'id',
-  },
+    updatePatientButton: 'id'
+  }
 };
 
 function buildRow(record, search, transforms = {}) {

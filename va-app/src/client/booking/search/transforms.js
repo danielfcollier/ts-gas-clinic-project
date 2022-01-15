@@ -1,6 +1,6 @@
 const transforms = {
   consultationDate: (date) => date,
-  consultationTime: (time) => time,
+  consultationTime: (time) => time
 };
 
 export default transforms;

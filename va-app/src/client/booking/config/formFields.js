@@ -10,15 +10,17 @@ const formFields = [
   'consultationType',
   'consultationValue',
   //
-  'paymentMethod',
+  'paymentMethod'
   // 'paymentStatus',
   // 'paymentId',
+  // 'installmentId',
   // 'paymentDueDate',
   // 'paymentDate',
   // 'paymentFees',
   // 'paymentTaxes',
   //
   // 'patientId',
+  // 'customerId'
   // 'fullName',
   // 'documentCountry',
   // 'documentState',
@@ -27,8 +29,7 @@ const formFields = [
   // 'birthDay',
   // 'postalCode',
   // 'location',
-  // 'folderId',
-  // 'customerId',
+  // 'folderId'
 ];
 
 export default formFields;

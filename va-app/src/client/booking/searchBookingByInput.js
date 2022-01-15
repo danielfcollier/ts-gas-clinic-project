@@ -12,7 +12,7 @@ export default function searchBookingByInput() {
     data: retrieveSessionData('iBookingBulkData'),
     input: window.document.getElementById('search-booking-input').value,
     box: window.document.getElementById('search-results'),
-    template: window.document.getElementById('search-template').content,
+    template: window.document.getElementById('search-template').content
   };
 
   const clearResults = () => {

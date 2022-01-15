@@ -14,7 +14,7 @@ const schema = [
   'createdAt',
   'updatedAt',
   'lastConsultationAt',
-  'totalConsultations',
+  'totalConsultations'
 ];
 
 export default schema;

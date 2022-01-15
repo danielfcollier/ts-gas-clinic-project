@@ -124,5 +124,5 @@ export {
   serverAddPatient,
   serverUpdatePatientById,
   serverDeleteCustomerById,
-  serverEditCustomer,
+  serverEditCustomer
 };

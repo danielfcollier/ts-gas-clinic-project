@@ -1,6 +1,6 @@
 enum TimerOptions {
   morning = 9,
-  afternoon = 14,
+  afternoon = 14
 }
 
 // Sheet
