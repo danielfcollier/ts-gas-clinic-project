@@ -13,22 +13,23 @@ const schema = [
   'paymentMethod',
   'paymentStatus',
   'paymentId',
+  'installmentId',
   'paymentDueDate',
   'paymentDate',
   'paymentFees',
   'paymentTaxes',
   //
   'patientId',
+  'customerId',
   'fullName',
   'documentCountry',
-  'documentState',
+  // 'documentState',
   'cellphone',
   'email',
-  'birthDay',
-  'postalCode',
-  'location',
-  'folderId',
-  'customerId',
+  'birthDay'
+  // 'postalCode',
+  // 'location',
+  // 'folderId'
 ];
 
 export default schema;
