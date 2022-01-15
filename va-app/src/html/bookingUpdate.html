@@ -1,6 +1,6 @@
 <h4>Atualizar Agendamento</h4>
 
-<div class="edit-customer-form" id="needs-validation" novalidate>
+<form class="edit-customer-form" id="needs-validation" novalidate>
   <div class="mb-3" hidden>
     <input type="text" class="form-control" id="id" />
   </div>
@@ -82,7 +82,7 @@
       <option value="1" selected>Link de Pagamento</option>
       <option value="2">Autorizada</option>
       <option value="3">Sem Cobrança</option>
-      <option value="3">Conta Bancária</option>
+      <option value="4">Conta Bancária</option>
     </select>
     <div class="invalid-feedback">Escolha uma forma de pagamento.</div>
   </div>
@@ -94,7 +94,8 @@
   </div>
 
   <button class="btn btn-primary" onsubmit="return false" type="submit">Atualizar</button>
-  <button class="btn btn-primary" id="cancelButton">Cancelar</button>
-</div>
+  <button class="btn btn-primary cancelButton">Cancelar</button>
+
+</form>
 
 <div class="alert alert-success invisible mt-3" id="save-success-alert" role="alert">Agendamento Atualizado!</div>

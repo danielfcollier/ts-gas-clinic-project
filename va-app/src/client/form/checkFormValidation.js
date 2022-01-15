@@ -8,7 +8,10 @@ export default function checkFormValidation(form, validations) {
     if (validations[id]) {
       const isFormInvalid = !element.classList.contains('is-valid');
 
-      if (isFormInvalid) return false;
+      if (isFormInvalid) {
+        element.classList.add('is-invalid');
+        return false;
+      }
     }
   }
 

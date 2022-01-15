@@ -1,6 +1,6 @@
 <h4>Cadastrar Paciente</h4>
 
-<div class="add-customer-form">
+<form class="add-customer-form" id="needs-validation" novalidate>
   <div class="mb-3">
     <label for="fullName">Nome Completo</label>
     <input type="text" class="form-control" id="fullName" />
@@ -41,8 +41,8 @@
     <input type="text" class="form-control" id="location" />
   </div>
 
-  <button class="btn btn-primary" id="createPatientButton">Cadastrar</button>
+  <button class="btn btn-primary" type="submit">Cadastrar</button>
   <button class="btn btn-primary" id="cancelButton">Cancelar</button>
-</div>
+</form>
 
 <div class="alert alert-success invisible mt-3" id="save-success-alert" role="alert">Paciente Cadastrada!</div>
