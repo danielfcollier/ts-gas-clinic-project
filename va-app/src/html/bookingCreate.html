@@ -6,14 +6,39 @@
     <input type="text" class="form-control" id="fullName" readonly />
   </div>
 
-  <div class="mb-3">
-    <label for="consultationMoment">Momento</label>
-    <input type="text" class="form-control" id="consultationMoment" readonly />
+  <div class="mb-3" hidden>
+    <label for="patientId"></label>
+    <input type="text" class="form-control" id="patientId" />
+  </div>
+
+  <div class="mb-3" hidden>
+    <label for="patientStatus"></label>
+    <input type="text" class="form-control" id="patientStatus" />
+  </div>
+
+  <div class="mb-3" hidden>
+    <label for="customerId"></label>
+    <input type="text" class="form-control" id="customerId" />
+  </div>
+
+  <div class="mb-3" hidden>
+    <label for="documentCountry"></label>
+    <input type="text" class="form-control" id="documentCountry" />
+  </div>
+
+  <div class="mb-3" hidden>
+    <label for="email"></label>
+    <input type="text" class="form-control" id="email" />
+  </div>
+
+  <div class="mb-3" hidden>
+    <label for="birthDay"></label>
+    <input type="text" class="form-control" id="birthDay" />
   </div>
 
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect01">Momento</label>
-    <select class="form-select" id="inputGroupSelect01" readonly>
+    <label class="input-group-text" for="consultationMoment">Momento</label>
+    <select class="form-select" id="consultationMoment" disabled>
       <option value="1" selected>Seguimento</option>
       <option value="2">1ª Consulta</option>
     </select>
@@ -31,15 +56,9 @@
     <div class="invalid-feedback">Insira um horário para a consulta.</div>
   </div>
 
-  <div class="mb-3">
-    <label for="consultationSet">Tipo</label>
-    <input type="text" class="form-control" id="consultationSet" />
-    <div class="invalid-feedback">Please choose a username.</div>
-  </div>
-
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect02">Tipo</label>
-    <select class="form-select" id="inputGroupSelect02">
+    <label class="input-group-text" for="consultationSet">Tipo</label>
+    <select class="form-select" id="consultationSet">
       <option value="1" selected>Online</option>
       <option value="2">Presencial</option>
       <option value="3">DIU</option>
@@ -48,14 +67,9 @@
     <div class="invalid-feedback">Selecione um tipo de consulta.</div>
   </div>
 
-  <div class="mb-3">
-    <label for="consultationType">Modalidade</label>
-    <input type="text" class="form-control" id="consultationType" />
-  </div>
-
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect03">Modalidade</label>
-    <select class="form-select" id="inputGroupSelect03">
+    <label class="input-group-text" for="consultationType">Modalidade</label>
+    <select class="form-select" id="consultationType">
       <option value="1" selected>Beija-flor</option>
       <option value="2">Girassol</option>
       <option value="3">Artemísia</option>
@@ -63,22 +77,10 @@
     <div class="invalid-feedback">Selecione uma modalidade.</div>
   </div>
 
-  <div class="mb-3">
-    <label for="paymentMethod">Pagamento</label>
-    <input
-      type="text"
-      class="form-control"
-      id="paymentMethod"
-      onkeypress="jQuery(this).mask('000.000.000-00')"
-      required
-    />
-    <div class="invalid-feedback">Escolha uma forma de pagamento.</div>
-  </div>
-
   <div class="input-group mb-3">
-    <label class="input-group-text" for="inputGroupSelect04">Pagamento</label>
-    <select class="form-select" id="inputGroupSelect04">
-      <option value="1" selected>Padrão</option>
+    <label class="input-group-text" for="paymentMethod">Pagamento</label>
+    <select class="form-select" id="paymentMethod">
+      <option value="1" selected>Link de Pagamento</option>
       <option value="2">Autorizada</option>
       <option value="3">Sem Cobrança</option>
       <option value="3">Conta Bancária</option>
@@ -92,8 +94,8 @@
     <div class="invalid-feedback">Insira o valor autorizado para a consulta.</div>
   </div>
 
-  <button class="btn btn-primary" id="submitButton" onsubmit="return false" type="submit">Agendar</button>
-  <button class="btn btn-primary" id="cancelButton">Cancelar</button>
+  <button class="btn btn-primary" onsubmit="return false" type="submit">Agendar</button>
+  <button class="btn btn-primary cancelButton">Cancelar</button>
 </form>
 
 <div class="alert alert-success invisible mt-3" id="save-success-alert" role="alert">Consulta Agendada!</div>
