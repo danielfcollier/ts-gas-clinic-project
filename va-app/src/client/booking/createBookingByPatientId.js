@@ -8,8 +8,11 @@ import requiredField from '../form/requiredField';
 import { getSessionDataById } from '../utils/sessionData';
 import setFormEvents from '../form/setFormEvents';
 import validateForm from '../form/validateForm';
+import selectOptions from './config/selectOptions';
+import paymentHandler from './config/paymentHandler';
 
-const filterParams = ['fullName'];
+const patientParams = ['fullName', 'id', 'status', 'customerId', 'documentCountry', 'birthDay', 'email'];
+const patientFields = ['fullName', 'patientId', 'patientStatus', 'customerId', 'documentCountry', 'birthDay', 'email'];
 
 function cleanNumber(number) {
   return number.replace(/\D/g, '');
@@ -34,43 +37,63 @@ function documentCountry(documentString) {
   }
 }
 
-// TODO: mensagem de validação: mostrar e tirar!
 const validations = {
   consultationTime: { validator: requiredField, mask: postalCode },
   consultationDate: {
     validator: (value) => value === 'R$ 1,00',
     placeHolder: 'R$ 0,00',
     mask: (value) => `R$ ${value},00`,
-    message: 'ola...',
+    message: 'ola...'
   },
   consultationValue: {
     validator: (value) => value === '003.212.781-27',
     mask: documentCountry,
     placeHolder: '000.000.000-00',
-    message: 'ola...',
-  },
+    message: 'ola...'
+  }
 };
 
-export default function createBookingByPatientId(params) {
-  const patientData = getSessionDataById('patientBulkData', params.patientId);
+function initMixedForm(params) {
+  const newFormFields = [...formFields, ...patientFields];
 
-  const filterValues = [];
-  filterParams.forEach((element) => {
+  const patientData = getSessionDataById('patientBulkData', params.patientId);
+  const patientValues = [];
+  patientParams.forEach((element) => {
     let paramIndex;
     patientSchema.default.forEach((paramName, index) => {
       if (element === paramName) {
         paramIndex = index;
       }
     });
-    filterValues.push(patientData[paramIndex]);
+    patientValues.push(patientData[paramIndex]);
   });
 
-  const formData = [...formDefault, ...filterValues];
+  const patientStatus = patientValues[patientFields.indexOf('patientStatus')];
+  const fieldValues = formDefault(patientStatus);
+  const newFormData = [...fieldValues, ...patientValues];
 
-  const form = window.document.getElementById('needs-validation');
-  // TODO: mudar formFields
-  setFormFields([...formFields, ...filterParams], formData);
-  setFormEvents(form, validations);
-  validateForm(form, validations);
-  checkFormValidation(form, validations);
+  return { formData: newFormData, formFields: newFormFields };
+}
+
+export default function createBookingByPatientId(params) {
+  const mixedForm = initMixedForm(params);
+  setFormFields(mixedForm.formFields, mixedForm.formData, selectOptions);
+
+  const handlers = {
+    successHandler: {
+      callback: 1, // successHandlerCallback
+      action: 2, // serverFunction
+      params: 3 // params form server function
+    },
+    failureHandler: {
+      action: 1, // function
+      params: 2 // params
+    }
+  };
+
+  setFormEvents(validations, handlers);
+  paymentHandler();
+
+  // validateForm(form, validations);
+  // checkFormValidation(form, validations);
 }
