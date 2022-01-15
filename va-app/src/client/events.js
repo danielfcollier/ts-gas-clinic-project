@@ -1,4 +1,4 @@
-import { clickEventHandler, inputEventHandler, navClickEventHandler } from './handlers';
+import { changeEventHandler, clickEventHandler, inputEventHandler, navClickEventHandler } from './handlers';
 import { buildTabBooking, buildTabCreatePatient, buildTabSearchPatient, buildTabWeeks } from './tabs';
 
 const events = [
@@ -21,6 +21,11 @@ const events = [
     id: 'tab-weeks',
     type: 'click',
     callback: buildTabWeeks
+  },
+  {
+    id: 'app',
+    type: 'change',
+    callback: changeEventHandler
   },
   {
     id: 'app',

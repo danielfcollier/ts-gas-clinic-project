@@ -11,7 +11,7 @@ const appHandlers = {
 
 const handlers = [appHandlers, bookingHandlers, patientHandlers];
 
-function handle(type, e) {
+function handleEvent(type, e) {
   for (const handler of handlers) {
     if (handler[type]) {
       for (const event of handler[type]) {
@@ -24,19 +24,24 @@ function handle(type, e) {
   }
 }
 
+function changeEventHandler(e) {
+  const type = 'change';
+  handleEvent(type, e);
+}
+
 function clickEventHandler(e) {
   const type = 'click';
-  handle(type, e);
+  handleEvent(type, e);
 }
 
 function inputEventHandler(e) {
   const type = 'input';
-  handle(type, e);
+  handleEvent(type, e);
 }
 
 function navClickEventHandler(e) {
   const type = 'navClick';
-  handle(type, e);
+  handleEvent(type, e);
 }
 
-export { clickEventHandler, inputEventHandler, navClickEventHandler };
+export { changeEventHandler, clickEventHandler, inputEventHandler, navClickEventHandler };
